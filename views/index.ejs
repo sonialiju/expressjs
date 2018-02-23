@@ -1,0 +1,69 @@
+<!--Including header file-->
+<% include partials/header %>
+
+    <h1>Add Person</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <!--Listing all the validation errors-->
+            <% if(errors){ %>
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    <% errors.forEach(function(error){ %>
+                    <li><%= error.msg %></li>
+                    <% }) %>
+                </ul>
+            </div>
+            <% } %>
+
+            <!--Form for create new person-->
+            <form method="post" action="">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" name="age" class="form-control">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-success">
+            </form>
+
+            <!--Displaying all the persons in the db-->
+            <% if(people != ""){%>
+            <!--Displays title-->
+            <h1><%= title %></h1>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                <% people.forEach(function(people){ %>
+                <tr>
+                    <td><%= people.name %></td>
+                    <td><a href="/persons/<%= people._id %>" >View</a></td>
+                    <td><a href="/persons/edit/<%= people._id %>" >Edit</a></td>
+                    <td><a href="#" class="deleteUser" data-id="<%= people._id %>">Delete</a></td>
+                </tr>
+                <% }) %>
+                </tbody>
+            </table>
+
+            <% }%>
+        </div>
+
+        </div>
+
+
+
+<!--Including Footer-->
+<% include partials/footer %>
+

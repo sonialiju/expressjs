@@ -1,0 +1,12 @@
+<!--Including header file-->
+<% include partials/header %>
+
+<% if(singleuser){ %>
+    <h3>You are Viewing</h3>
+    <p><%= singleuser.name %></p>
+    <p><%= singleuser.email %></p>
+    <p><%= singleuser.age %></p>
+<% } %>
+
+<!--Including Footer-->
+<% include partials/footer %>
