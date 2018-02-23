@@ -11,10 +11,7 @@ The project contains basic codes for creating, viewing, updating and deleting pe
     b)sudo apt-get update
     c)sudo apt-get install -y mongodb-org
     d)sudo systemctl start mongod
-    d)mongo
-    e)use customerapp
-    f)db.createCollection('people')
-    
+  
  
  Download the project and copy the folder 'customerapp-master' to your working directory
  
@@ -22,4 +19,4 @@ The project contains basic codes for creating, viewing, updating and deleting pe
  
  npm install
  
- node app or directly paste  http://localhost:3000/ in your browser
+ node app and directly paste  http://localhost:3000/ in your browser
